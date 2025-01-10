@@ -44,7 +44,7 @@ def split_doc(document, chunk_size, chunk_overlap):
 
 def embedding_storing( split, create_new_vs, existing_vector_store, new_vs_name):
     if create_new_vs is not None:
-        instructor_embeddings =HuggingFaceEmbeddings(model_name="dbmdz/bert-base-italian-cased", 
+        instructor_embeddings =HuggingFaceEmbeddings(model_name="GroNLP/gpt2-small-italian-embeddings", 
                                            model_kwargs={'device': 'cpu'})
 
         # Implement embeddings
@@ -71,14 +71,14 @@ def embedding_storing( split, create_new_vs, existing_vector_store, new_vs_name)
 def prepare_rag_llm(
     token, vector_store_list, temperature, max_length
 ):
-    instructor_embeddings = HuggingFaceEmbeddings(model_name="dbmdz/bert-base-italian-cased", 
+    instructor_embeddings = HuggingFaceEmbeddings(model_name="GroNLP/gpt2-small-italian-embeddings", 
                                            model_kwargs={'device': 'cpu'})
     # Load db
     loaded_db = FAISS.load_local(
         f"vector store/{vector_store_list}", instructor_embeddings, allow_dangerous_deserialization=True
     )
     llm = HuggingFaceHub(
-        repo_id = 'tiiuae/falcon-7b-instruct',
+        repo_id = 'andreabac3/Fauno-Italian-LLM-7B',
         model_kwargs={"temperature": temperature, "max_length": max_length},
         huggingfacehub_api_token=token
     )
