@@ -65,7 +65,7 @@ def display_chatbot_page():
                 llm_model = st.text_input("LLM model", value="tiiuae/falcon-7b-instruct")
 
             with row_1[2]:
-                instruct_embeddings = st.text_input("Instruct Embeddings", value="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+                instruct_embeddings = st.text_input("Instruct Embeddings", value="sentence-transformers/distiluse-base-multilingual-cased-v1")
 
             row_2 = st.columns(3)
             with row_2[0]:
@@ -146,7 +146,7 @@ def display_document_embedding_page():
         row_1 = st.columns([2, 1, 1])
         with row_1[0]:
             instruct_embeddings = st.text_input(
-                "Model Name of the Instruct Embeddings", value="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+                "Model Name of the Instruct Embeddings", value="sentence-transformers/distiluse-base-multilingual-cased-v1"
             )
         
         with row_1[1]:
