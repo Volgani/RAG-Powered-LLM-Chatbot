@@ -62,10 +62,10 @@ def display_chatbot_page():
                 text = st.text_input("Hugging Face Token (No need to insert)", type='password',value= f"{'*' * len(os.getenv('API_KEY'))}")
 
             with row_1[1]:
-                llm_model = st.text_input("LLM model", value="tiiuae/falcon-7b-instruct")
+                llm_model = st.text_input("LLM model", value="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
 
             with row_1[2]:
-                instruct_embeddings = st.text_input("Instruct Embeddings", value="GroNLP/gpt2-small-italian-embeddings")
+                instruct_embeddings = st.text_input("Instruct Embeddings", value="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
 
             row_2 = st.columns(3)
             with row_2[0]:
