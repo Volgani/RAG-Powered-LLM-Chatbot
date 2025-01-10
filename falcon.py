@@ -44,7 +44,7 @@ def split_doc(document, chunk_size, chunk_overlap):
 
 def embedding_storing( split, create_new_vs, existing_vector_store, new_vs_name):
     if create_new_vs is not None:
-        instructor_embeddings =HuggingFaceEmbeddings(model_name="nickprock/sentence-bert-base-italian-uncased", 
+        instructor_embeddings =HuggingFaceEmbeddings(model_name="sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2", 
                                            model_kwargs={'device': 'cpu'})
 
         # Implement embeddings
