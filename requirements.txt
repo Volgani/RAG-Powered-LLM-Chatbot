@@ -1,5 +1,6 @@
 langchain_community
 langchain
+~langchain-huggingface
 faiss-cpu
 sentence-transformers
 InstructorEmbedding
