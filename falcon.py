@@ -78,7 +78,7 @@ def prepare_rag_llm(
         f"vector store/{vector_store_list}", instructor_embeddings, allow_dangerous_deserialization=True
     )
     llm = HuggingFaceHub(
-        repo_id = 'ssmits/Falcon2-8B-Italian',
+        repo_id = 'meta-llama/Meta-Llama-3.1-405B-Instruct',
         model_kwargs={"temperature": temperature, "max_length": max_length},
         huggingfacehub_api_token=token
     )
